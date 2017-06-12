@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.cidaassdk.CidaasSDK;
 import com.cidaassdk.ResponseEntity;
-import com.cidaassdk.UserProfile;
 
 public class MainActivity extends AppCompatActivity {
     static CidaasSDK cidaasHelper = null;
@@ -43,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         };
-        CidaasSDK.userProfCallback = new CidaasSDK.UserProfCallback() {
+       /* CidaasSDK.userProfCallback = new CidaasSDK.UserProfCallback() {
             @Override
             public void onSuccess(UserProfile userProfile) {
 
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onError(String message) {
             }
-        };
+        };*/
         cidaasHelper.login(layout_root, getApplicationContext(), CidaasSDK.callback_);
     }
 }
