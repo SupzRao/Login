@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CidaasSDK</string>
+    <string name="tryAgain">Try Again!!</string>
+    <string name="RedirectURI">RedirectURI</string>
+    <string name="ResponseType">ResponseType</string>
+    <string name="ClientId">ClientId</string>
+    <string name="ViewType">ViewType</string>
+    <string name="ClientSecret">ClientSecret</string>
+    <string name="TokenURL">TokenURL</string>
+    <string name="GrantType">GrantType</string>
+    <string name="UserIdURL">UserIdURL</string>
+    <string name="LogoutURL">LogoutURL</string>
+    <string name="AuthorizationURL">AuthorizationURL</string>
+    <string name="facebook_app_id_">facebook_app_id</string>
+    <string name="google_app_id_">google_app_id</string>
+</resources>

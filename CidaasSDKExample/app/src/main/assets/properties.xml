@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="RedirectURI" type="string">Your Redirect URI</item>
+    <item name="ClientId" type="string">Your ClientId</item>
+    <item name="ViewType" type="string">Your View Type</item>
+    <item name="ClientSecret" type="string">Your ClientSecret</item>
+    <item name="TokenURL" type="string">Your Token URL</item>
+    <item name="UserIdURL" type="string">Your UserId URL</item>
+    <item name="LogoutURL" type="string">Your Logout URL</item>
+    <item name="AuthorizationURL" type="string">Your Authorization URL</item>
+
+</resources>
