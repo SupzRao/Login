@@ -514,13 +514,10 @@ public class CidaasSDK extends RelativeLayout {
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-          /*  if (url.contains("getSocialAuthCode/facebook") && (facebook_app_id != null && !facebook_app_id.equals(""))) {
+            if (url.contains("getSocialAuthCode/facebook") && (facebook_app_id != null && !facebook_app_id.equals(""))) {
                 view.stopLoading();
                 doFBLogin(context);
-
-
-
-            } else*/ if (url.contains("getSocialAuthCode/google") && (google_app_id != null && !google_app_id.equals(""))) {
+            } else if (url.contains("getSocialAuthCode/google") && (google_app_id != null && !google_app_id.equals(""))) {
                 view.stopLoading();
                 doGoogleLogin(context);
             } else {
@@ -616,12 +613,12 @@ public class CidaasSDK extends RelativeLayout {
         }
 
         private void doFBLogin(final Context context) {
-            /*Intent fbIntent = new Intent(context, MainActivity.class);
+            Intent fbIntent = new Intent(context, MainActivity.class);
             fbIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             fbIntent.putExtra("facebook_app_id", facebook_app_id);
-            context.startActivity(fbIntent);*/
-            MainActivity mainActivity=new MainActivity();
-            mainActivity.loginFB(getContext(),facebook_app_id);
+            context.startActivity(fbIntent);
+           /* MainActivity mainActivity=new MainActivity();
+            mainActivity.loginFB(getContext(),facebook_app_id);*/
         }
 
         private void doGoogleLogin(Context context) {

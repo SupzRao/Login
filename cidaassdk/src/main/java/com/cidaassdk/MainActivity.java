@@ -22,34 +22,33 @@ public class MainActivity extends AppCompatActivity {
     private LoginButton mButtonLogin;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mButtonLogin = (LoginButton) findViewById(R.id.login_button);
         if (getIntent() != null && getIntent().getStringExtra("facebook_app_id") != null) {
             String facebook_app_id = getIntent().getStringExtra("facebook_app_id");
-           // FacebookSdk.setApplicationId(facebook_app_id);
-            loginFB(getApplicationContext(),facebook_app_id);
+
+            FacebookSdk.setApplicationId(facebook_app_id);
+            FacebookSdk.sdkInitialize(getApplicationContext());
+            callbackManager = CallbackManager.Factory.create();
+            setContentView(R.layout.cidaas_activity_main);
+            loginFB(getApplicationContext(), facebook_app_id);
+        } else {
+            Toast.makeText(getApplicationContext(), "Error initializing Facebook AppId!", Toast.LENGTH_LONG).show();
         }
-
-
 
     }
 
-    public void loginFB(Context context,String facebook_app_id) {
-        FacebookSdk.setApplicationId(facebook_app_id);
-        FacebookSdk.sdkInitialize(context);
-        callbackManager = CallbackManager.Factory.create();
-        setContentView(R.layout.cidaas_activity_main);
-        mButtonLogin = (LoginButton) findViewById(R.id.login_button);
+    public void loginFB(Context context, String facebook_app_id) {
 
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
                         // App code
-                        Toast.makeText(MainActivity.this, "Login" + loginResult.getAccessToken(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Login" + loginResult.getAccessToken().getToken(), Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -70,7 +69,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        FacebookSdk.sdkInitialize(this);
+        if (getIntent() != null && getIntent().getStringExtra("facebook_app_id") != null) {
+            String facebook_app_id = getIntent().getStringExtra("facebook_app_id");
+            FacebookSdk.setApplicationId(facebook_app_id);
+            FacebookSdk.sdkInitialize(this);
+        }
     }
 
     @Override
