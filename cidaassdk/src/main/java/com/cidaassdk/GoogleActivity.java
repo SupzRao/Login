@@ -54,7 +54,7 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
         mGoogleApiClient.connect();
-        mAuth = FirebaseAuth.getInstance();
+      //  mAuth = FirebaseAuth.getInstance();
         sign_in_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
