@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private CallbackManager callbackManager;
     private LoginButton mButtonLogin;
-    private Intent startIntent;
+
 
 
     @Override
@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loginFB(Context context,String facebook_app_id) {
-        startIntent=getIntent();
-        startActivity(startIntent);
         FacebookSdk.setApplicationId(facebook_app_id);
         FacebookSdk.sdkInitialize(context);
         callbackManager = CallbackManager.Factory.create();

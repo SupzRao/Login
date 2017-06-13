@@ -514,13 +514,13 @@ public class CidaasSDK extends RelativeLayout {
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            if (url.contains("getSocialAuthCode/facebook") && (facebook_app_id != null && !facebook_app_id.equals(""))) {
+          /*  if (url.contains("getSocialAuthCode/facebook") && (facebook_app_id != null && !facebook_app_id.equals(""))) {
                 view.stopLoading();
                 doFBLogin(context);
 
 
 
-            } else if (url.contains("getSocialAuthCode/google") && (google_app_id != null && !google_app_id.equals(""))) {
+            } else*/ if (url.contains("getSocialAuthCode/google") && (google_app_id != null && !google_app_id.equals(""))) {
                 view.stopLoading();
                 doGoogleLogin(context);
             } else {
