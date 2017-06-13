@@ -1,27 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="RedirectURI" type="string">
-        https://apis-cidaas.test.carbookplus.com/user-ui/html/calback.html</item>
-    <item name="ResponseType" type="string">code</item>
-    <item name="ClientId" type="string">74af56f6dc104bd6bb6d145f1ba0665d</item>
-    <item name="ViewType" type="string">login</item>
-    <item name="ClientSecret" type="string">6925369134149551229</item>
-    <item name="TokenURL" type="string">
-        https://apis-cidaas.test.carbookplus.com/oauth2-login/oauth2/token
-    </item>
-    <item name="GrantType" type="string">authorization_code</item>
-    <item name="UserIdURL" type="string">
-        https://apis-cidaas.test.carbookplus.com/oauth2-usermanagement/oauth2/userinfo
-    </item>
-    <item name="LogoutURL" type="string">
-        https://apis-cidaas.test.carbookplus.com/oauth2-usermanagement/oauth2/logoutsimple
-    </item>
-    <item name="AuthorizationURL" type="string">
-        https://apis-cidaas.test.carbookplus.com/oauth2-login/oauth2/authz
-    </item>
-
-    <item name="facebook_app_id" type="string">1499593226758097</item>
-    <item name="google_app_id" type="string">876803207532-amp4t74ihomd74q7apip4bgu5as0cnqc.apps.googleusercontent.com</item>
-
+    <item name="RedirectURI" type="string">Your Redirect URI</item>
+    <item name="ClientId" type="string">Your ClientId</item>
+    <item name="ViewType" type="string">Your View Type</item>
+    <item name="ClientSecret" type="string">Your ClientSecret</item>
+    <item name="TokenURL" type="string">Your Token URL</item>
+    <item name="UserIdURL" type="string">Your UserId URL</item>
+    <item name="LogoutURL" type="string">Your Logout URL</item>
+    <item name="AuthorizationURL" type="string">Your Authorization URL</item>
 
 </resources>
