@@ -45,7 +45,7 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
                 //.requestIdToken("876803207532-7qlql70ser2n6q2a2d29t7a38dia1t91.apps.googleusercontent.com")
                 .requestScopes(new Scope(Scopes.PLUS_LOGIN))
                 .requestScopes(new Scope(Scopes.PLUS_ME))
-                .requestServerAuthCode("876803207532-7qlql70ser2n6q2a2d29t7a38dia1t91.apps.googleusercontent.com")
+                .requestServerAuthCode(google_app_id)
                 .requestEmail()
                 .build();
 
