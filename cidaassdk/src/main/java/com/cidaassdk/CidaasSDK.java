@@ -91,7 +91,7 @@ public class CidaasSDK extends RelativeLayout {
     static CidaasSDK cidaasHelper;
     public RelativeLayout layout;
     public ILogin finalcallback_;
-    public String facebook_app_id,google_app_id;
+    public String facebook_app_id, google_app_id;
 
     public CidaasSDK(Context context) {
         super(context);
@@ -459,12 +459,10 @@ public class CidaasSDK extends RelativeLayout {
                 } else if ((nodeList.item(x).getAttributes().getNamedItem("name").getNodeValue().
                         equalsIgnoreCase(getContext().getString(R.string.AuthorizationURL)))) {
                     authorizationURL = nodeList.item(x).getTextContent().trim();
-                }
-                else if ((nodeList.item(x).getAttributes().getNamedItem("name").getNodeValue().
+                } else if ((nodeList.item(x).getAttributes().getNamedItem("name").getNodeValue().
                         equalsIgnoreCase(getContext().getString(R.string.facebook_app_id_)))) {
                     facebook_app_id = nodeList.item(x).getTextContent().trim();
-                }
-                else if ((nodeList.item(x).getAttributes().getNamedItem("name").getNodeValue().
+                } else if ((nodeList.item(x).getAttributes().getNamedItem("name").getNodeValue().
                         equalsIgnoreCase(getContext().getString(R.string.google_app_id_)))) {
                     google_app_id = nodeList.item(x).getTextContent().trim();
                 }
@@ -619,6 +617,9 @@ public class CidaasSDK extends RelativeLayout {
             context.startActivity(fbIntent);
            /* MainActivity mainActivity=new MainActivity();
             mainActivity.loginFB(getContext(),facebook_app_id);*/
+          /*  I_LoginFB i_loginFB;
+            i_loginFB.Login(context, facebook_app_id);*/
+
         }
 
         private void doGoogleLogin(Context context) {

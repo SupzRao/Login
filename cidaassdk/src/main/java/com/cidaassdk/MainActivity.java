@@ -1,6 +1,5 @@
 package com.cidaassdk;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,37 +11,43 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
+
+import java.util.Arrays;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
 
     private CallbackManager callbackManager;
-    private LoginButton mButtonLogin;
-
+    private LoginManager mLoginManager;
+    private Intent startIntent;
+    static MainActivity instanceActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        mButtonLogin = (LoginButton) findViewById(R.id.login_button);
+        instanceActivity = this;
         if (getIntent() != null && getIntent().getStringExtra("facebook_app_id") != null) {
             String facebook_app_id = getIntent().getStringExtra("facebook_app_id");
 
             FacebookSdk.setApplicationId(facebook_app_id);
             FacebookSdk.sdkInitialize(getApplicationContext());
+            mLoginManager = LoginManager.getInstance();
             callbackManager = CallbackManager.Factory.create();
-            setContentView(R.layout.cidaas_activity_main);
-            loginFB(getApplicationContext(), facebook_app_id);
+            //  setContentView(R.layout.cidaas_activity_main);
+            loginFB();
         } else {
             Toast.makeText(getApplicationContext(), "Error initializing Facebook AppId!", Toast.LENGTH_LONG).show();
         }
 
     }
 
-    public void loginFB(Context context, String facebook_app_id) {
+    public static MainActivity getInstance() {
+        return instanceActivity;
+    }
 
+    public void loginFB() {
+        mLoginManager.logInWithReadPermissions(MainActivity.this, Arrays.asList("public_profile"));
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
                     @Override
@@ -66,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -83,5 +89,9 @@ public class MainActivity extends AppCompatActivity {
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
 
     }
+
+
+
+
 
 }
